@@ -7,13 +7,15 @@ class SmallText extends StatelessWidget {
   Color? textColor;
   final String textName;
   double textSize;
+  double textSpaceHeight;
 
   SmallText({
 
     Key? key,
     this.textColor = const Color(0xFF332d2b),
     required this.textName,
-    this.textSize = 12.0
+    this.textSize = 12.0,
+    this.textSpaceHeight = 1.8
   }) : super(key: key);
 
   @override
@@ -24,7 +26,7 @@ class SmallText extends StatelessWidget {
       textName,
       style: GoogleFonts.roboto(
 
-        color: textColor, fontSize: textSize
+        color: textColor, fontSize: textSize, height: textSpaceHeight
       ),
     );
   }

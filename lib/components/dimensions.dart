@@ -29,6 +29,7 @@ class Dimentions{
   static double fontSize_25 = screenHeight / 32.80;
   static double fontSize_20 = screenHeight / 41.00;
   static double fontSize_18 = screenHeight / 45.56;
+  static double fontSize_16 = screenHeight / 51.25;
   static double fontSize_14 = screenHeight / 58.57;
 
   // dynamic border radius
@@ -50,5 +51,7 @@ class Dimentions{
   static double foodImageContainerHeight_350 = screenHeight / 2.34;
 
   // dynamic bottom nav 
+  static double bottomNavContainerHeight_100 = screenHeight / 8.20;
+  static double bottomNavContainerHeight_110 = screenHeight / 7.45;
   static double bottomNavContainerHeight_120 = screenHeight / 6.83;
 }
