@@ -3,6 +3,7 @@ import 'package:food_delivery_app/components/app_colors.dart';
 import 'package:food_delivery_app/components/dimensions.dart';
 import 'package:food_delivery_app/widgets/app_column.dart';
 import 'package:food_delivery_app/widgets/app_icon.dart';
+import 'package:food_delivery_app/widgets/expandable_text.dart';
 import 'package:food_delivery_app/widgets/head_text.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -26,6 +27,7 @@ class _FoodDetailsState extends State<FoodDetails> {
 
         children: [
 
+          // background image
           Positioned(
 
             left: 0, right: 0,
@@ -44,6 +46,7 @@ class _FoodDetailsState extends State<FoodDetails> {
             ),
           ),
 
+          // showing icons
           Positioned(
             
             top: Dimentions.heightWhiteSpace_45,
@@ -60,6 +63,7 @@ class _FoodDetailsState extends State<FoodDetails> {
             ),
           ),
 
+          // food details body
           Positioned(
 
             top: Dimentions.foodImageContainerHeight_350 - 25,
@@ -95,17 +99,30 @@ class _FoodDetailsState extends State<FoodDetails> {
                     textName: "Introduce",
                     textSize: Dimentions.fontSize_20,
                     textColor: AppColors.mainBlackColor
+                  ),
+                  SizedBox(height: Dimentions.heightWhiteSpace_20),
+
+                  const Expanded(
+
+                    child: SingleChildScrollView(
+                      
+                      child: ExpandableText(
+                    
+                        expandText: "Chicken Biryani is a savory chicken and rice dish that includes layers of chicken, rice, and aromatics that are steamed together. The bottom layer of rice absorbs all the chicken juices as it cooks, giving it a tender texture and rich flavor, while the top layer of rice turns out white and fluffy. Buried in the Biryani, you’ll find whole cuts of succulent chicken bursting with flavor from the potent array of spices, herbs, and aromatics it’s marinated in."
+                        "Whether you’re talking Arroz con Pollo, Hainanese Chicken Rice, or Oyako Donburi, chicken and rice is a classic pairing that has permeated culinary culture around the world. It makes sense that earlier in human history, this staple grain would be combined with a domesticated source of protein. Still, the fact that this combination has endured as a popular favorite today, speaks to its unassailable deliciousness."
+                      ),
+                    ),
                   )
                 ],
               )
             ),
-          )
+          ),
         ],
       ),
 
       bottomNavigationBar: Container(
 
-        height: Dimentions.bottomNavContainerHeight_120,
+        height: Dimentions.bottomNavContainerHeight_110,
         padding: EdgeInsets.symmetric(
 
           vertical: Dimentions.heightWhiteSpace_30,
@@ -134,32 +151,37 @@ class _FoodDetailsState extends State<FoodDetails> {
                 borderRadius: BorderRadius.circular(Dimentions.radius_15)
               ),
 
-              child: Row(
+              child: Align(
 
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                alignment: Alignment.center,
+                child: Row(
+              
+                  children: [
+              
+                    IconButton(
+              
+                      iconSize: Dimentions.iconSize_20,
+                      icon: Icon(Icons.remove, color: AppColors.mainBlackColor),
+                      onPressed: (){},
+                    ),
+                    SizedBox(width: Dimentions.widthWhiteSpace_10 / 2),
 
-                  IconButton(
+                    HeadText(
+              
+                      textName: "0",
+                      textSize: Dimentions.fontSize_20,
+                    ),
+                    SizedBox(width: Dimentions.widthWhiteSpace_10 / 2),
 
-                    iconSize: Dimentions.iconSize_16,
-                    icon: Icon(Icons.remove, color: AppColors.mainBlackColor),
-                    onPressed: (){},
-                  ),
-
-                  HeadText(
-
-                    textName: "0",
-                    textSize: Dimentions.fontSize_20,
-                  ),
-
-                  IconButton(
-
-                    color: Colors.grey[300],
-                    iconSize: Dimentions.iconSize_16,
-                    icon: Icon(Icons.add, color: AppColors.mainBlackColor),
-                    onPressed: (){},
-                  )
-                ],
+                    IconButton(
+              
+                      color: Colors.grey[300],
+                      iconSize: Dimentions.iconSize_20,
+                      icon: Icon(Icons.add, color: AppColors.mainBlackColor),
+                      onPressed: (){},
+                    )
+                  ],
+                ),
               ),
             ),
 
@@ -177,7 +199,7 @@ class _FoodDetailsState extends State<FoodDetails> {
               ),
               child: Text(
 
-                "\$0.5 Add to cart",
+                "\$5.0 | Add to cart",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.roboto(
 
